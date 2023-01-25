@@ -6,7 +6,8 @@ WORKDIR /app
 
 COPY .mvn/ .mvn
 COPY mvn pom.xml ./
-#RUN ./mvnw dependency:resolve
+RUN sudo apt install maven -y
+RUN ./mvnw dependency:list
 
 COPY src ./src
 
